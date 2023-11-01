@@ -21,7 +21,7 @@ export default function navbar() {
             </Link>
           </span>
           <span className="font-bold hover:border-b-2 border-white">
-            <Link href={"/"}>
+            <Link href={"/productos"}>
               Productos
             </Link>
           </span>

@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 import '@/styles/globals.css'
 import Head from 'next/head'
 import { Navbar, Footer } from '@/components'
- 
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -14,8 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       
       <Navbar/>
-      <div className="h-40 bg-slate-500"></div> 
-      {/* <Component {...pageProps} /> */}
+      <Component {...pageProps} />
       <Footer/> 
     </>
   )

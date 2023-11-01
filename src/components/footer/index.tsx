@@ -3,7 +3,7 @@ import { footerBackground, footerLogo, separador } from '@/assets';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Navbar = () => {
+const Footer = () => {
   const backgroundImageUrl = footerBackground.src;
   return (
     <div className="bg-[#272727]">
@@ -58,4 +58,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Footer;
