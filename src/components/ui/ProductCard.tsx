@@ -11,9 +11,6 @@ type ProductCardProps = {
  * Componente que renderiza una tarjeta de producto para la página de productos 'src/pages/productos/index.tsx'
  * El componente es una tarjeta con un fondo de imagen con un linear-gradient que oscurece la imagen de fondo 20%.
  * Título y botón 'Ver más' centrados en la tarjeta.
- * 
- * @param param0 src de la imagen de fondo, titulo y url del producto
- * @returns Tarjeta de producto
  */
 const ProductCard = ({ backgroundImageSrc, title, url }: ProductCardProps) => {
   return (
