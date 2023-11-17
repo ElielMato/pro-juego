@@ -1,0 +1,27 @@
+{
+    "pool": {
+        "name": "Mesa de Pool",
+        "emoji": "pool.svg",
+        "width": "50"
+    },
+    "poker": {
+        "name": "Mesa de Poker",
+        "emoji": "poker-hand.svg",
+        "width": "60"
+    },
+    "multiuso": {
+        "name": "Mesa Multiuso",
+        "emoji": "table-tennis.svg",
+        "width": "45"
+    },
+    "metegol": {
+        "name": "Metegol",
+        "emoji": "futbol.svg",
+        "width": "45"
+    },
+    "dardos": {
+        "name": "Tablero de Dardos",
+        "emoji": "dardo.svg",
+        "width": "50"
+    }
+}

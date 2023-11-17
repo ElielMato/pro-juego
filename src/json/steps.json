@@ -1,0 +1,20 @@
+{
+    "one": {
+        "icon": "Ilustracion_Paso1.svg",
+        "name": "01.",
+        "title": "Elegí tu juego y contactanos",
+        "desc": "Escoge de nuestro catálogo o comparte tus preferencias. Te contactaremos para coordinar la mejor opción para vos."
+    },
+    "two": {
+        "icon": "Ilustracion_Paso2.svg",
+        "name": "02.",
+        "title": "Fabricamos tu juego y lo enviamos",
+        "desc": "Nuestros profesionales elaboran de manera artesanal tu pedido y lo enviamos a tu domicilio."
+    },
+    "three": {
+        "icon": "Ilustracion_Paso3.svg",
+        "name": "03.",
+        "title": "¡Recibí en tu casa y disfrutá!",
+        "desc": "Realizamos envíos a todo el país, aseguramos la seguridad de tu juego para que llegue en perfecto estado."
+    }
+}

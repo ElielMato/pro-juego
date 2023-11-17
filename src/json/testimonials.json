@@ -1,0 +1,20 @@
+{
+    "T1":{
+        "icon": "Foto_Lucio.svg",
+        "text": "“Excelente calidad de la mesa. Pedí el modelo industrial y es hermosa. Patricio siempre estuvo atento a todos mis pedidos y consultas. Yo soy de Rosario y el envío llegó en óptimas condiciones a la puerta de mi casa. Súper recomendable.”",
+        "name": "Lucio",
+        "city": "Rosario, Santa Fé"
+    },
+    "T2":{
+        "icon": "Foto_Jose.svg",
+        "text": "“Excelente terminación, cumplieron en cada uno de los pedidos y entregaron un producto espectacular. Había tenido otras mesas,  pero la calidad no se podía comparar en nada con ésta. Altamente recomendables, el embalaje para la entrega fue muy cuidadoso , y los plazos fueron totalmente cumplidos. Para resumir un producto de calidad creado por alguien que sin dudas, entiende del tema.”",
+        "name": "José",
+        "city": "CABA, Buenos Aires"
+    },
+    "T3":{
+        "icon": "Foto_Daniel.svg",
+        "text": "“Desde el primer contacto con PRO Juegos hasta la entrega del producto, la atención ofrecida por la empresa ha sido altamente satisfactoria. Recomiendo 100% la compra de las mesas de pool 3 en 1, muy buena calidad y muy prolija terminación. ¡Felicitaciones PRO Juegos de Salón sigan así!”",
+        "name": "Daniel",
+        "city": "Resistencia, Chaco"
+    }
+}

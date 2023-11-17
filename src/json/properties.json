@@ -1,0 +1,26 @@
+{
+    "envios": {
+        "name": "Envíos a todo el país",
+        "text": "Garantizamos la seguridad de tu pedido para que llegue en perfecto estado.",
+        "emoji": "Icon_envios.svg",
+        "width": "50"
+    },
+    "fabrica": {
+        "name": "Somos fabricantes",
+        "text": "Nuestros productos son 100% artesanales y están elaborados por nuestros especialistas.",
+        "emoji": "Icon_fabricantes.svg",
+        "width": "50"
+    },
+    "calidad": {
+        "name": "Máxima calidad",
+        "text": "Nuestros años de experiencia nos avalan,  garantizamos acabados y materiales de alta calidad.",
+        "emoji": "Icon_calidad.svg",
+        "width": "50"
+    },
+    "pedidos": {
+        "name": "Pedidos personalizados",
+        "text": "Armamos tu juego según tus necesidades y gustos.",
+        "emoji": "Icon_pedidos.svg",
+        "width": "50"
+    }
+}
