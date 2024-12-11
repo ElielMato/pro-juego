@@ -1,27 +1,32 @@
 {
     "pool": {
-        "name": "Mesa de Pool",
-        "emoji": "pool.svg",
-        "width": "50"
+      "name": "Mesa de Pool",
+      "emoji": "pool.svg",
+      "width": 50,
+      "url": "products/pool"
     },
     "poker": {
-        "name": "Mesa de Poker",
-        "emoji": "poker-hand.svg",
-        "width": "60"
+      "name": "Mesa de Poker",
+      "emoji": "poker-hand.svg",
+      "width": 60,
+      "url": "products/poker"
     },
     "multiuso": {
-        "name": "Mesa Multiuso",
-        "emoji": "table-tennis.svg",
-        "width": "45"
+      "name": "Mesa Multiuso",
+      "emoji": "table-tennis.svg",
+      "width": 45,
+      "url": "products/multiuso"
     },
     "metegol": {
-        "name": "Metegol",
-        "emoji": "futbol.svg",
-        "width": "45"
+      "name": "Metegol",
+      "emoji": "futbol.svg",
+      "width": 45,
+      "url": "products/metegol"
     },
     "dardos": {
-        "name": "Tablero de Dardos",
-        "emoji": "dardo.svg",
-        "width": "50"
+      "name": "Tablero de Dardos",
+      "emoji": "dardo.svg",
+      "width": 50,
+      "url": "products/dardos"
     }
-}
+  }

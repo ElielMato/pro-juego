@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "form-data": "^4.0.0",
     "google-map-react": "^2.2.1",
+    "mailgun.js": "^9.4.0",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",

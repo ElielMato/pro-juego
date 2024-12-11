@@ -1,48 +1,75 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import GoogleMapReact from "google-map-react";
 
 import FeaturedProducts from "../featured-products";
-import products from "@/json/products.json";
-import testimonials from "@/json/testimonials.json";
-import steps from "@/json/steps.json";
-import properties from "@/json/properties.json";
+import ProductsJson from "@/json/products.json"
+import TestimonialJson from "@/json/testimonials.json";
+import StepsJson from "@/json/steps.json";
+import PropertyJson from "@/json/properties.json";
 
-export default function home() {
-  const [changeImage, setChangeImage] = useState(false);
 
+
+export default function Home() {
+  interface Product {
+    name: string;
+    emoji: string;
+    width: number;
+    url: string;
+  }
+
+  const products: Record<string, Product> = ProductsJson
+  
+  interface Testimony {
+    icon: string;
+    text: string;
+    name: string;
+    city: string;
+  }
+
+  const Testimonials: Record<string, Testimony> = TestimonialJson
+
+  interface Step {
+    icon: string;
+    name: string;
+    title: string;
+    desc: string;
+  }
+
+  const Steps: Record<string, Step> = StepsJson
+
+  interface Property {
+    name: string;
+    text: string;
+    url: string;
+    width: number;
+  }
+
+  const Propieties: Record<string, Property> = PropertyJson
+  const [changeimage, setchangeimage] = useState(false);
   const nextImage = () => {
-    setChangeImage(true);
+    setchangeimage(true);
   };
 
   const prevImage = () => {
-    setChangeImage(false);
-  };
-
-  const [isNavbarActive, setIsNavbarActive] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsNavbarActive(!isNavbarActive);
+    setchangeimage(false);
   };
 
   function handleClickPrev() {
     prevImage();
-    toggleNavbar();
   }
 
   function handleClickNext() {
     nextImage();
-    toggleNavbar();
   }
 
   function renderProducts() {
-    return Object.keys(products).map((key, index) => {
+    return Object.keys(products).map((key) => {
       const option = products[key];
       return (
         <Link
-          key={index}
-          href={""}
+          key={key}
+          href={`/${option.url}`}
           className="bg-[#646464] flex items-center justify-center border-2 border-white w-[200px] h-[60px]"
         >
           <Image
@@ -59,10 +86,10 @@ export default function home() {
   }
 
   function renderTestimonials() {
-    return Object.keys(testimonials).map((key, index) => {
-      const option = testimonials[key];
+    return Object.keys(Testimonials).map((key, index) => {
+      const option = Testimonials[key];
       return (
-        <section>
+        <section key={key}>
           <div className="flex items-center justify-center">
             <Image
               src={`/${option.icon}`}
@@ -94,27 +121,27 @@ export default function home() {
   }
 
   function renderSteps() {
-    return Object.keys(steps).map((key, index) => {
-      const option = steps[key];
+    return Object.keys(Steps).map((key, index) => {
+      const option = Steps[key];
       return (
-        <section>
-          <div className="flex items-center justify-center">
+        <section key={index} className="flex flex-col md:flex-row md:w-full md:max-w-[400px] mb-8 md:mb-0">
+          <div className="flex items-center justify-center md:w-[200px]">
             <Image
               src={`/${option.icon}`}
               alt="steps Icon"
               className=""
               width={200}
-              height={0}
+              height={200}
             />
           </div>
 
-          <div className="w-[250px]">
-            <h1 className="text-4xl font-bold text-lora">{option.name}</h1>
-            <hr className="border-white border-[1px] mb-4" />
-            <h2 className="text-2xl font-bold text-lora mb-6">
+          <div className="w-full md:ml-6 md:border-l-2 md:pl-6">
+            <h1 className="text-lg md:text-2xl lg:text-3xl font-bold font-lora">{option.name}</h1>
+            <hr className="border-white border-[1px] mb-2 md:mb-4" />
+            <h2 className="text-base md:text-lg lg:text-xl font-bold font-lora mb-2 md:mb-6">
               {option.title}
             </h2>
-            <p>{option.desc}</p>
+            <p className="text-sm md:text-base lg:text-lg">{option.desc}</p>
           </div>
         </section>
       );
@@ -122,12 +149,12 @@ export default function home() {
   }
 
   function renderProperties() {
-    return Object.keys(properties).map((key, index) => {
-      const option = properties[key];
+    return Object.keys(Propieties).map((key, index) => {
+      const option = Propieties[key];
       return (
-        <section>
+        <section key={key}>
           <Image
-            src={`/${option.emoji}`}
+            src={`/${option.url}`}
             alt="properties Icon"
             className=""
             width={option.width}
@@ -144,8 +171,8 @@ export default function home() {
 
   return (
     <main>
-      <section className="relative w-full top-0 z-0">
-        {changeImage
+      <section className="relative w-full top-0">
+        {changeimage
           ? (
             <section className="relative">
               <div className="relative">
@@ -168,7 +195,7 @@ export default function home() {
                       </p>
                       <div className="mt-4 py-10 font-overpass">
                         <Link
-                          href={"/"}
+                          href={"/contact"}
                           className="relative inline-block px-10 py-3 mx-4 font-medium group"
                         >
                           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-white group-hover:-translate-x-0 group-hover:-translate-y-0">
@@ -180,7 +207,7 @@ export default function home() {
                           </span>
                         </Link>
                         <Link
-                          href={"/"}
+                          href={"/products"}
                           className="relative inline-block px-8 py-3 mx-4 font-medium group"
                         >
                           <span className="absolute inset-0 w-full h-full bg-white border-2 border-white group-hover:bg-black">
@@ -192,7 +219,7 @@ export default function home() {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute top-[80%]">
+                  <div className="absolute top-[80%] lg:hidden">
                     <button className="text-xl" onClick={handleClickPrev}>
                       ○
                     </button>
@@ -223,7 +250,7 @@ export default function home() {
                       </p>
                       <div className="mt-4 py-10 font-overpass">
                         <Link
-                          href={"/"}
+                          href={"/contact"}
                           className="relative inline-block px-10 py-3 mx-4 font-medium group"
                         >
                           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-white group-hover:-translate-x-0 group-hover:-translate-y-0">
@@ -235,7 +262,7 @@ export default function home() {
                           </span>
                         </Link>
                         <Link
-                          href={"/"}
+                          href={"/products"}
                           className="relative inline-block px-8 py-3 mx-4 font-medium group"
                         >
                           <span className="absolute inset-0 w-full h-full bg-white border-2 border-white group-hover:bg-black">
@@ -247,47 +274,44 @@ export default function home() {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute top-[80%]">
-                    <button className="text-xl">◉</button>
-                    <button className="text-xl" onClick={handleClickNext}>
-                      ○
-                    </button>
-                  </div>
                 </div>
               </div>
             </section>
           )}
       </section>
-
+      
+      {/* Productos */}
       <section className="bg-[#202020] text-white font-overpass px-20 py-12 flex items-center justify-center w-full gap-x-5">
         {renderProducts()}
       </section>
-
+      
+      {/* Productos Destacados */}
       <FeaturedProducts />
-
-      <section className="flex bg-[#1A1718]">
-        <div className="w-[65%] font-lora px-[250px] my-auto order-first">
-          <h1 className="text-4xl font-bold mb-2">Nosotros</h1>
-          <p className="mb-2">
+      
+      {/* Nosotros */}
+      <section className="flex flex-col items-center md:flex-row bg-[#1A1718]">
+        <div className="md:w-3/5 md:order-first px-6 md:px-10 py-8 md:py-0 font-lora">
+          <h1 className="text-4xl font-bold mb-4 md:mb-6">Nosotros</h1>
+          <p className="mb-4 md:mb-6">
             Nuestra pasión es la creación de juegos de salón a medida, perfectos
             para tu hogar, negocio o evento. Diseñamos productos personalizados
             que se ajustan a tus gustos y necesidades.
           </p>
-          <p className="mb-2">
+          <p className="mb-4 md:mb-6">
             En nuestro catálogo de productos, encontrarás una amplia variedad de
             opciones para elegir o realizaremos tu diseño personalizado. Nos
             pondremos en contacto para brindarte asesoramiento y preparar un
             presupuesto a medida.
           </p>
-          <p className="">
+          <p className="mb-4 md:mb-6">
             Realizamos restauraciones de mesas, cambios de paños y de bandas
             entre otros.
           </p>
         </div>
-        <div className="flex items-center justify-end w-[35%] order-last">
+        <div className="md:w-2/5 md:order-last flex items-center justify-center">
           <Image
             src="/Foto_Nosotros.png"
-            className="w-[100%]"
+            className="w-full md:max-w-lg"
             alt=""
             width={2000}
             height={0}
@@ -295,16 +319,18 @@ export default function home() {
         </div>
       </section>
 
+
+      {/* Testimonios */}
       <section className="bg-white text-center text-black py-14">
-        <h1 className="text-[45px] font-lora font-extrabold pb-14">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-lora font-extrabold pb-8 md:pb-14">
           Testimonios
         </h1>
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-5">
           {renderTestimonials()}
         </div>
         <Link
           href={"/"}
-          className="relative inline-block px-8 py-2 mt-14 font-medium group"
+          className="inline-block mt-8 md:mt-14 px-6 py-2 md:px-8 md:py-3 font-medium relative group"
         >
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0">
           </span>
@@ -316,53 +342,57 @@ export default function home() {
         </Link>
       </section>
 
-      <section className="bg-[#005762] px-60 pb-20">
-        <h1 className="text-[45px] font-lora font-extrabold py-14">
+      
+      {/* Pasos */}
+      <section className="bg-[#005762] px-6 md:px-12 lg:px-24 pb-8 md:pb-20">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-lora font-extrabold py-8 md:py-14">
           Pasos
         </h1>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-center lg:flex-row md:gap-6 lg:gap-12">
           {renderSteps()}
         </div>
       </section>
 
-      <section className="flex bg-[#1A1718] text-center">
-        <div className="w-[65%] font-lora px-[350px] my-auto order-last">
-          <h1 className="text-4xl font-bold mb-2">
+      {/* Pasion/Diversion */}
+      <section className="flex flex-col items-center justify-center lg:flex-row bg-[#1A1718] text-center">
+        <div className="lg:w-2/3 lg:order-last lg:px-20 max-md:text-center">
+          <h1 className="text-2xl lg:text-4xl font-bold font-lora mb-2">
             Donde la pasión se convierte en diversión
           </h1>
-          <p>
-            En Argentina, el metegol no es solo un juego. Es por eso que
-            diseñamos nuestras mesas para resistir la pasión y la competitividad
-            de nuestros jugadores, siendo el complemento perfecto para los
-            partidos más emocionantes.
+          <p className="text-sm lg:text-base" >
+            En Argentina, el metegol no es solo un juego. Es por eso que diseñamos nuestras mesas para resistir la pasión y la competitividad de nuestros jugadores, siendo el complemento perfecto para los partidos más emocionantes.
           </p>
         </div>
-        <div className="flex items-center justify-end w-[40%] order-first">
+        <div className="lg:w-1/3 lg:order-first">
           <Image
             src="/Foto_Metegol.png"
-            className="w-[100%]"
             alt=""
+            className="w-full max-md:w-[100px]"
             width={2000}
             height={0}
           />
         </div>
       </section>
 
+
+      {/* Ubicacion */}
       <section className="bg-white text-black z-20">
-        <div className="py-14 px-60">
-          <h1 className="text-4xl font-bold mb-12 text-center">Ubicación</h1>
+        <div className="py-8 md:py-14 px-4 md:px-12 lg:px-24">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-12 text-center">
+            Ubicación
+          </h1>
           <div className="flex items-center justify-center">
-            <Link href={"https://maps.app.goo.gl/uAcsicdCvfxQt5zF6"} target="_blacnk">
+            <Link href={"https://maps.app.goo.gl/uAcsicdCvfxQt5zF6"} target="_blank">
               <Image
                 src={"/Ubicacion.png"}
                 alt="ubicacion"
-                width={1100}
-                height={0}
+                width={800}
+                height={600}
               />
             </Link>
           </div>
         </div>
-        <div className="flex items-center justify-between py-14 px-40">
+        <div className="flex flex-wrap justify-center md:justify-between py-8 md:py-14 px-4 md:px-12 lg:px-24">
           {renderProperties()}
         </div>
       </section>
