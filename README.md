@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PRO Juegos - Custom Gaming Table Showroom
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-13.5.4-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0-teal?logo=tailwindcss)
+![React](https://img.shields.io/badge/React-18.0-blue?logo=react)
 
-First, run the development server:
+A modern gaming table showroom and e-commerce platform built with **Next.js 13** and **TypeScript**. This comprehensive application showcases custom-made gaming tables including pool tables, poker tables, foosball tables, dart boards, and multi-purpose gaming furniture with integrated contact and business management features.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Features
+
+- **Product Showcase**: Interactive catalog of custom gaming tables with detailed specifications
+- **Custom Design Consultation**: Contact system for personalized gaming table requests
+- **Responsive Gallery**: High-quality image galleries for each product category
+- **Business Information**: Company details, testimonials, and service information
+- **Contact Integration**: Email contact form with photo upload capabilities
+- **Location Services**: Interactive map integration for business location
+- **Multi-Product Categories**: Pool, poker, foosball, darts, and multi-purpose tables
+- **Testimonial System**: Customer reviews and feedback display
+- **Service Process**: Step-by-step guide for custom table creation
+- **Responsive Design**: Fully responsive layout optimized for all devices
+- **Static Export**: Optimized for static hosting with Next.js export functionality
+
+## 🛠️ Tech Stack
+
+| Technology       | Purpose                            | Version |
+| ---------------- | ---------------------------------- | ------- |
+| **Next.js**      | React Framework & Static Export    | 13.5.4  |
+| **TypeScript**   | Type Safety & Developer Experience | 5.0     |
+| **Tailwind CSS** | Utility-First CSS Framework        | 3.0     |
+| **React**        | Frontend Library                   | 18.0    |
+| **React Slick**  | Carousel/Slider Components         | 0.29.0  |
+| **Google Maps**  | Location Services Integration      | 2.2.1   |
+| **Mailgun.js**   | Email Service Integration          | 9.4.0   |
+| **Form Data**    | File Upload Handling               | 4.0.0   |
+
+## 📁 Project Structure
+
+```
+src/
+├── components/                    # React components
+│   ├── about-me/                  # About us section
+│   │   └── index.tsx
+│   ├── contact/                   # Contact form and info
+│   │   └── index.tsx
+│   ├── featured-products/         # Product highlights
+│   │   └── index.tsx
+│   ├── footer/                    # Site footer
+│   │   └── index.tsx
+│   ├── home/                      # Homepage components
+│   │   └── index.tsx
+│   ├── navbar/                    # Navigation bar
+│   │   └── index.tsx
+│   ├── products/                  # Product category pages
+│   │   ├── dardos/               # Dart boards
+│   │   ├── metegol/              # Foosball tables
+│   │   ├── multiuso/             # Multi-purpose tables
+│   │   ├── poker/                # Poker tables
+│   │   └── pool/                 # Pool tables
+│   └── ui/                       # Reusable UI components
+│       ├── ProductCard.tsx
+│       └── VerMasButton.tsx
+├── pages/                        # Next.js pages
+│   ├── _app.tsx                  # App wrapper
+│   ├── _document.tsx             # Document structure
+│   ├── index.tsx                 # Homepage
+│   ├── about-me/                 # About page
+│   ├── contact/                  # Contact page
+│   └── products/                 # Product pages
+├── json/                         # Data files
+│   ├── products.json             # Product catalog
+│   ├── properties.json           # Business properties
+│   ├── steps.json               # Process steps
+│   └── testimonials.json        # Customer reviews
+├── assets/                       # Static assets
+│   ├── footer/                   # Footer assets
+│   └── productos/                # Product images
+└── styles/
+    └── globals.css               # Global styles
+
+public/                           # Static files
+├── Image-AboutMe/                # About section images
+├── Image-Contact/                # Contact page icons
+├── Image-DartBoards/             # Dart board images
+├── Image-Foosball/               # Foosball table images
+├── Image-Multipurpose/           # Multi-purpose table images
+├── Image-Poker/                  # Poker table images
+└── Image-Pool/                   # Pool table images
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Node.js** (version 16.0.0 or higher)
+- **npm**, **yarn**, or **pnpm** package manager
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/ElielMato/pro-juego.git
+   cd pro-juego
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Install dependencies**
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Environment variables** (Optional)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Create a `.env.local` file for any environment-specific configurations:
+
+   ```env
+   # Google Maps API (if using maps integration)
+   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+
+   # Email service configuration
+   MAILGUN_API_KEY=your_mailgun_api_key
+   MAILGUN_DOMAIN=your_mailgun_domain
+   ```
+
+4. **Start the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+5. **Open your browser**
+
+   Navigate to `http://localhost:3000` to see the application running.
+
+## 🏗️ Building for Production
+
+```bash
+# Build the project for static export
+npm run build
+
+# The built files will be in the 'out' directory
+# You can serve this directory with any static hosting service
+```
+
+## 📄 License
+
+This project is proprietary software for PRO Juegos de Salón. All rights reserved.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for gaming enthusiasts and custom furniture lovers**
+
+</div>
